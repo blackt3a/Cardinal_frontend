@@ -1,4 +1,6 @@
 <template>
+    <div class="ma">
+        <div class="mi">
     <v-content>
         <v-snackbar v-model="messageBar" color="error" :timeout="2000" :top="true">{{ message }}</v-snackbar>
 
@@ -33,7 +35,7 @@
                 <v-btn text @click="onReset">{{$t('login.reset')}}</v-btn>
             </v-card-actions>
         </v-card>
-        <div class="mt-8 text-center">Copyright © 2020 Cardinal</div>
+        <div class="mt-8 text-center">Copyright © 2024 Covteam</div>
 
         <!-- 登录等待 -->
         <v-dialog v-model="isLoading" hide-overlay persistent width="300">
@@ -46,6 +48,9 @@
         </v-dialog>
 
     </v-content>
+    </div>
+</div>
+
 </template>
 
 <script>
@@ -79,7 +84,7 @@
         created() {
             this.utils.GET('/base').then(res => {
                 this.base = res
-            }).catch(() => this.base.Title = 'Cardinal')
+            }).catch(() => this.base.Title = '2024年贵州省卫生健康系统网络安全技能竞赛-团队赛')
         },
 
         methods: {
@@ -106,5 +111,31 @@
 </script>
 
 <style scoped>
+
+.ma {
+  /* //这里地址是用项目中图片所在路径为准 */
+  background: url("http://47.101.181.195:8000/a.png");
+  /* //将图片样式不重复 */
+  background-repeat: no-repeat;
+  /* //设置图片大小 */
+  background-size: 100%;
+  /* 设置全屏 */
+  position: fixed;
+  /* 设置div高度 */
+  height: 100%;
+  /* 设置div宽度 */
+  width: 100%;
+}
+.mi {
+  width: 400px;
+  height: 400px;
+  padding-right: 20px;
+  padding-top: 20px;
+  position: fixed;
+  top: 30%;
+  right: 10%;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
 
 </style>
