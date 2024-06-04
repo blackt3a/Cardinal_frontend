@@ -153,7 +153,7 @@
     width:450px;
     height: 350px;
     padding:50px;
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,.1);
     /*背景颜色为黑色，透明度为0.8*/
     box-sizing:border-box;
     /*box-sizing设置盒子模型的解析模式为怪异盒模型，
@@ -162,6 +162,6 @@
     /*边框阴影  水平阴影0 垂直阴影15px 模糊25px 颜色黑色透明度0.5*/
     border-radius:15px;
     /*边框圆角，四个角均为15px*/
-
+    
 }
 </style>
