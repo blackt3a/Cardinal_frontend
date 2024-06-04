@@ -1,6 +1,6 @@
 <template>
     <div class="ma">
-        <div class="mi">
+        <!-- 登录框靠右       <div class="mi"> -->
     <v-content>
         <v-snackbar v-model="messageBar" color="error" :timeout="2000" :top="true">{{ message }}</v-snackbar>
 
@@ -48,7 +48,7 @@
         </v-dialog>
 
     </v-content>
-    </div>
+    <!-- </div> --> 
 </div>
 
 </template>
@@ -132,8 +132,8 @@
   padding-right: 20px;
   padding-top: 20px;
   position: fixed;
-  top: 30%;
-  right: 10%;
+  top: 50%;
+  right: 50%;
   background-color: rgba(255, 255, 255, 0);
   border: none;
 }
