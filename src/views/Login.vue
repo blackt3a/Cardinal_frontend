@@ -1,14 +1,16 @@
 <template>
     <div class="ma">
-        <!-- 登录框靠右       <div class="mi"> -->
-    <v-content>
+        
+        <v-content>
         <v-snackbar v-model="messageBar" color="error" :timeout="2000" :top="true">{{ message }}</v-snackbar>
 
-        <v-row align="center" justify="center" style="margin-top: 12%;">
+            <v-row align="center" justify="center" style="margin-top: 22%;">  <!--中央标题字体-->
             <h1 class="display-2 font-weight-thin">{{base.Title}}</h1>
         </v-row>
         <br>
-        <v-card class="mx-auto" max-width="400">
+
+
+        <v-card class="login_container" max-width="400">
             <v-card-title>{{$t('login.title')}}</v-card-title>
             <v-card-text>
                 <v-form ref="form">
@@ -34,8 +36,9 @@
                 <v-btn text color="primary" @click="onLogin">{{$t('login.login')}}</v-btn>
                 <v-btn text @click="onReset">{{$t('login.reset')}}</v-btn>
             </v-card-actions>
-        </v-card>
+
         <div class="mt-8 text-center">Copyright © 2024 Covteam</div>
+        </v-card>
 
         <!-- 登录等待 -->
         <v-dialog v-model="isLoading" hide-overlay persistent width="300">
@@ -84,7 +87,7 @@
         created() {
             this.utils.GET('/base').then(res => {
                 this.base = res
-            }).catch(() => this.base.Title = '2024年贵州省卫生健康系统网络安全技能竞赛-团队赛')
+            }).catch(() => this.base.Title = '')
         },
 
         methods: {
@@ -137,5 +140,28 @@
   background-color: rgba(255, 255, 255, 0);
   border: none;
 }
+.login_container{
+   
 
+    position:absolute;
+    /*定位方式绝对定位absolute*/
+    top:140%;
+    left:50%;
+    /*顶和高同时设置50%实现的是同时水平垂直居中效果*/
+    transform:translate(-50%,-50%);
+    /*实现块元素百分比下居中*/
+    width:450px;
+    height: 350px;
+    padding:50px;
+    background: rgba(0,0,0,.5);
+    /*背景颜色为黑色，透明度为0.8*/
+    box-sizing:border-box;
+    /*box-sizing设置盒子模型的解析模式为怪异盒模型，
+    将border和padding划归到width范围内*/
+    box-shadow: 0px 15px 25px rgba(0,0,0,.5);
+    /*边框阴影  水平阴影0 垂直阴影15px 模糊25px 颜色黑色透明度0.5*/
+    border-radius:15px;
+    /*边框圆角，四个角均为15px*/
+
+}
 </style>
